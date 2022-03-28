@@ -1,8 +1,24 @@
-
+import {useState} from 'react'
 import styles from './App.module.css'
 import logo from './assets/logo.png'
 
 const App = () =>{
+
+
+  const[height, setHeight] = useState<number>(0)
+
+  const[weight, setWeight] = useState<number>(0)
+
+
+  const handleCalculate = () =>{
+    if(height && weight){
+      window.alert("Aíi simmm bichao")
+    }else{
+      window.alert("aí nao bichaooo")
+    }
+  }
+
+
   return(
     <div className={styles.main} >
       <header>
@@ -15,7 +31,15 @@ const App = () =>{
 
         <div className={styles.left}>
 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam mollitia reiciendis, maiores nam id animi qui suscipit quae dolores ab cum fugit velit at quidem accusantium! Veritatis accusantium similique illum?
+          <h1>Calcule o seu IMC</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam doloremque, inventore culpa officiis quod officia adipisci aperiam obcaecati placeat, perferendis quaerat eius veritatis enim ratione ad. Ea, aut ratione.</p>
+
+          <input type="number" placeholder='Informe sua altura. Ex: 1.5 (em metros)' value={height > 0 ?  height: ''} onChange={e => setHeight(parseFloat(e.target.value))} />
+
+
+          <input type="number" placeholder='Informe seu peso. Ex 40.5 (em KG)' value={weight > 0 ? weight: ''} onChange={e => setWeight(parseFloat(e.target.value))}  />
+
+          <button onClick={handleCalculate} >Calcular</button>
 
         </div>
 
@@ -26,6 +50,11 @@ const App = () =>{
         </div>
 
       </div>
+
+      
+
+
+      )
     </div>
   )
 }

@@ -10,7 +10,7 @@ body{
 header .headerContainer{
     max-width: 900px;
     margin: 40px auto;
-    background-color: red;
+    
 }
 
 header .headerContainer img{
@@ -28,12 +28,12 @@ header .headerContainer img{
 
 .container .left{
     flex: 1;
-    background-color: blue;
+
     margin-right: 40px;
 }
 
 .container .right{
     flex: 1;
-    background-color: green;
+
     margin-left: 40px;
 }
