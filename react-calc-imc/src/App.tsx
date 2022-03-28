@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import styles from './App.module.css'
 import logo from './assets/logo.png'
-
+import {calculateImc, levels} from './helpers/imc'
 const App = () =>{
 
 
@@ -45,7 +45,7 @@ const App = () =>{
 
         <div className={styles.right}>
 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur unde deleniti reiciendis magni, officia repudiandae nam qui quo? Sapiente pariatur reprehenderit natus consectetur placeat earum harum praesentium inventore est accusantium.
+          
 
         </div>
 
