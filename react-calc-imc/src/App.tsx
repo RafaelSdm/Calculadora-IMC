@@ -2,6 +2,7 @@ import {useState} from 'react'
 import styles from './App.module.css'
 import logo from './assets/logo.png'
 import {calculateImc, levels} from './helpers/imc'
+import {GridItem} from './components/GridItem'
 const App = () =>{
 
 
@@ -45,7 +46,12 @@ const App = () =>{
 
         <div className={styles.right}>
 
-          
+          <div className={styles.grid}>
+            {levels.map((item, key) =>(
+              <GridItem key={key} item={item} />
+            ))}
+
+          </div>
 
         </div>
 
