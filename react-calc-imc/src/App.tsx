@@ -1,8 +1,17 @@
 import {useState} from 'react'
 import styles from './App.module.css'
 import logo from './assets/logo.png'
-import {calculateImc, levels} from './helpers/imc'
+import {calculateImc, Level, levels} from './helpers/imc'
 import {GridItem} from './components/GridItem'
+
+
+
+
+
+
+
+
+
 const App = () =>{
 
 
@@ -10,10 +19,16 @@ const App = () =>{
 
   const[weight, setWeight] = useState<number>(0)
 
+  const[showItem, setShowItem] = useState<Level | null>(null)
+
 
   const handleCalculate = () =>{
     if(height && weight){
-      window.alert("Aíi simmm bichao")
+      //window.alert("Aíi simmm bichao")
+
+      setShowItem(calculateImc(height, weight))
+
+
     }else{
       window.alert("aí nao bichaooo")
     }
@@ -46,12 +61,28 @@ const App = () =>{
 
         <div className={styles.right}>
 
-          <div className={styles.grid}>
-            {levels.map((item, key) =>(
-              <GridItem key={key} item={item} />
-            ))}
+          {!showItem &&
+          
+            <div className={styles.grid}>
+              {levels.map((item, key) =>(
+                <GridItem key={key} item={item} />
+              ))}
 
-          </div>
+            </div>
+          
+          }
+
+          {showItem &&
+
+            <div className={styles.rightBig} >
+              <div className={styles.rightArrow}>
+                <GridItem item={showItem}/>
+              </div>
+            </div>
+          
+          }
+
+          
 
         </div>
 
@@ -60,9 +91,10 @@ const App = () =>{
       
 
 
-      )
+      
     </div>
   )
 }
 
 export default App;
+  
