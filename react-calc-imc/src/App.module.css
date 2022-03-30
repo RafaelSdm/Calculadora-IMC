@@ -99,8 +99,22 @@ header .headerContainer img{
     flex: 1;
     display: flex;
   
-    align-items: center;
+    
+
+}
+
+.container .right .rightArrow{
+    position: absolute;
+    background-color: #227c9d;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: -35px;
+    margin-top: 145px;
+
 
 }
 

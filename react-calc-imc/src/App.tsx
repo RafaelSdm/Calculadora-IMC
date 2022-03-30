@@ -3,6 +3,7 @@ import styles from './App.module.css'
 import logo from './assets/logo.png'
 import {calculateImc, Level, levels} from './helpers/imc'
 import {GridItem} from './components/GridItem'
+import arrow from './assets/leftarrow.png'
 
 
 
@@ -32,6 +33,13 @@ const App = () =>{
     }else{
       window.alert("aí nao bichaooo")
     }
+  }
+
+
+  const handleBackButton = () =>{
+    setShowItem(null)
+    setHeight(0)
+    setWeight(0)
   }
 
 
@@ -75,9 +83,12 @@ const App = () =>{
           {showItem &&
 
             <div className={styles.rightBig} >
-              <div className={styles.rightArrow}>
-                <GridItem item={showItem}/>
+              <div className={styles.rightArrow} onClick={handleBackButton} >
+
+                <img src={arrow} alt=""/>
+                
               </div>
+              <GridItem item={showItem}/>
             </div>
           
           }
@@ -97,4 +108,3 @@ const App = () =>{
 }
 
 export default App;
-  
