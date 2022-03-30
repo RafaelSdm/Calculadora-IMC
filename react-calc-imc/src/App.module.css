@@ -58,6 +58,12 @@ header .headerContainer img{
 
 }
 
+.container .left input:disabled{
+    opacity: .5;
+}
+
+
+
 .container .left button{
 
     background-color: #227c9d;
@@ -76,6 +82,11 @@ header .headerContainer img{
 .container .left button:hover{
     background-color: #23647c;
   
+}
+
+.container .left button:disabled{
+    opacity: .5;
+    background-color: #227c9d;
 }
 
 
@@ -117,5 +128,7 @@ header .headerContainer img{
 
 
 }
+
+
 
 

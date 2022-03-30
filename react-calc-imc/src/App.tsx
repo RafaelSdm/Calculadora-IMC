@@ -58,12 +58,12 @@ const App = () =>{
           <h1>Calcule o seu IMC</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam doloremque, inventore culpa officiis quod officia adipisci aperiam obcaecati placeat, perferendis quaerat eius veritatis enim ratione ad. Ea, aut ratione.</p>
 
-          <input type="number" placeholder='Informe sua altura. Ex: 1.5 (em metros)' value={height > 0 ?  height: ''} onChange={e => setHeight(parseFloat(e.target.value))} />
+          <input type="number" placeholder='Informe sua altura. Ex: 1.5 (em metros)' value={height > 0 ?  height: ''} onChange={e => setHeight(parseFloat(e.target.value))} disabled={showItem ? true : false} />
 
 
-          <input type="number" placeholder='Informe seu peso. Ex 40.5 (em KG)' value={weight > 0 ? weight: ''} onChange={e => setWeight(parseFloat(e.target.value))}  />
+          <input type="number" placeholder='Informe seu peso. Ex 40.5 (em KG)' value={weight > 0 ? weight: ''} onChange={e => setWeight(parseFloat(e.target.value))}  disabled={showItem ? true : false} />
 
-          <button onClick={handleCalculate} >Calcular</button>
+          <button onClick={handleCalculate} disabled={showItem ? true : false} >Calcular</button>
 
         </div>
 
